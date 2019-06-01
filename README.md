@@ -1,0 +1,2 @@
+# Goal
+Solve Problems from https://projecteuler.net/  in python, R, javascript, sql (postgres) to gain better understanding of the languages. No libraries/packages allowed. Each function is implemented using unittests.
