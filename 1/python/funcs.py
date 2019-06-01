@@ -8,6 +8,9 @@ def find_multiples_generator(k):
   
 
 def find_multiples(k, n):
+    """
+    returns all multiples in list k of n, up to n 
+    """
     multiples = []
     for divisor in k:
         multiples += find_multiples_generator(divisor)(n)
