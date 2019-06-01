@@ -4,7 +4,6 @@ def find_multiples_generator(k):
 
     @param k: return function which returns all multiples k
     """
-    
     return lambda n: [n for n in range(1, n) if n % k == 0]
   
 

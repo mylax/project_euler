@@ -22,9 +22,6 @@ class test_find_multiples(unittest.TestCase):
     def test_find_multiples_no_numbers(self):
         self.assertEqual(find_multiples([], 10), [])
 
-    def test_find_multiples_minus_three(self):
-        self.assertEqual(find_multiples([-3], 10), [])
-
 
 if __name__ == '__main__':
     unittest.main()
