@@ -1,4 +1,4 @@
-from funcs import find_multiples_3_or_5
+from funcs import find_multiples
 
 if __name__ == "__main__":
-    print(sum(find_multiples_3_or_5(1000)))
+    print(sum(find_multiples([3, 5], 1000)))
