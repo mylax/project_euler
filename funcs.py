@@ -1,69 +1,87 @@
 # -*- coding: utf-8 -*-
 
 
+def find_multiples_generator(k):
+    """
+    returns a function that itself returns a list of all multiples k up to the number n
+    """
+    def find_multiples(n):
+        return [n for n in range(1, n) if n % k == 0]
 
-def get_primes(n):
-    """Return all primes smaller n as list."""
-    primes = [True] * n
-    primes[0] = primes[1] = False
-    for i, prime in enumerate(primes):
-        if prime:
-            for n in range(2 * i, (sqrt(n), i):
-                primes[i] = False
-
-    return [i for i, x in enumerate(primes) if x]
+    return find_multiples    
 
 
-def factors_generator(x):
-    primes = get_primes(x)
-
-    def find_factors(n):
-        """Return all prime factors of n and how often they occur.
-        E.g. 4 returns (2,2), 100 returns (2,2) (5, 2).
-
-        Keyword arguments:
-        n -- int -- find all the prime factors and how often they occur for this number
-        primes -- list of int -- optional, list of primes to speed up calculation
-        if primes is not provided calculate primes in the function call
-        """
-        if n == 0:
-            return []
-        primes_factors = [prime for prime in primes if n % prime == 0]
-        while True:
-            trianglenew = n
-            for prime in primes_factors:
-                trianglenew = trianglenew / prime
-            primes_factors.extend(
-                [prime for prime in primes if trianglenew % prime == 0])
-            if trianglenew == 1:
-                break
-
-        return [(prime, primes_factors.count(prime)) for prime in set(primes_factors) if prime != 1]
-    return find_factors
+def find_multiples_3_or_5(n):
+    multiples_three = find_multiples_generator(3)(n)
+    multiples_five = find_multiples_generator(5)(n)
+    combined_list = list(set(multiples_three + multiples_five))
+    combined_list.sort()
+    return combined_list
 
 
-def factors_generator2(x):
-    primes = get_primes(x)
 
-    def find_factors(n):
-        """Return all prime factors of n and how often they occur.
-        E.g. 4 returns (2,2), 100 returns (2,2) (5, 2).
+# def get_primes(n):
+#     """Return all primes smaller n as list."""
+#     primes = [True] * n
+#     primes[0] = primes[1] = False
+#     for i, prime in enumerate(primes):
+#         if prime:
+#             for n in range(2 * i, (sqrt(n), i):
+#                 primes[i] = False
 
-        Keyword arguments:
-        n -- int -- find all the prime factors and how often they occur for this number
-        primes -- list of int -- optional, list of primes to speed up calculation
-        if primes is not provided calculate primes in the function call
-        """
-        if n == 0:
-            return []
-        factors = []
-        for prime in primes:
-            while n % prime == 0 and n > 1:
-                factors.append(prime)
-                n = n  / prime
+#     return [i for i, x in enumerate(primes) if x]
 
-        return [(prime, factors.count(prime)) for prime in set(factors)]
-    return find_factors
+
+# def factors_generator(x):
+#     primes = get_primes(x)
+
+#     def find_factors(n):
+#         """Return all prime factors of n and how often they occur.
+#         E.g. 4 returns (2,2), 100 returns (2,2) (5, 2).
+
+#         Keyword arguments:
+#         n -- int -- find all the prime factors and how often they occur for this number
+#         primes -- list of int -- optional, list of primes to speed up calculation
+#         if primes is not provided calculate primes in the function call
+#         """
+#         if n == 0:
+#             return []
+#         primes_factors = [prime for prime in primes if n % prime == 0]
+#         while True:
+#             trianglenew = n
+#             for prime in primes_factors:
+#                 trianglenew = trianglenew / prime
+#             primes_factors.extend(
+#                 [prime for prime in primes if trianglenew % prime == 0])
+#             if trianglenew == 1:
+#                 break
+
+#         return [(prime, primes_factors.count(prime)) for prime in set(primes_factors) if prime != 1]
+#     return find_factors
+
+
+# def factors_generator2(x):
+#     primes = get_primes(x)
+
+#     def find_factors(n):
+#         """Return all prime factors of n and how often they occur.
+#         E.g. 4 returns (2,2), 100 returns (2,2) (5, 2).
+
+#         Keyword arguments:
+#         n -- int -- find all the prime factors and how often they occur for this number
+#         primes -- list of int -- optional, list of primes to speed up calculation
+#         if primes is not provided calculate primes in the function call
+#         """
+#         if n == 0:
+#             return []
+#         factors = []
+#         for prime in primes:
+#             while n % prime == 0 and n > 1:
+#                 factors.append(prime)
+#                 n = n  / prime
+
+#         return [(prime, factors.count(prime)) for prime in set(factors)]
+#     return find_factors
 
 
 # timeit.timeit('factors_generator(1000)(1000)', 'from __main__ import factors_generator', number = 1000)
