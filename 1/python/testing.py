@@ -1,14 +1,5 @@
 import unittest
-from funcs import find_multiples_generator
 from funcs import find_multiples
-
-class test_find_multiples_generator(unittest.TestCase):
-
-    def test_find_multiples_three_up_to_ten(self):
-        self.assertEqual(find_multiples_generator(3)(10), [3, 6, 9])
-
-    def test_find_multiples_three_up_to_zero(self):
-        self.assertEqual(find_multiples_generator(3)(0), [])    
 
 
 class test_find_multiples(unittest.TestCase):
