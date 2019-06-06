@@ -1,11 +1,11 @@
 def find_multiples(k, n):
     """
-    returns all multiples of k in n, up to n
+    returns iterator of all multiples of k in n, up to n
+    not ordered
     """
-    multiples = []
-    for divisor in k:
-        multiples += list(range(divisor, n, divisor))
-    combined_list = list(set(multiples))
-    combined_list.sort()
-    return combined_list
+    seen = set()
+    for item in (l for i in k for l in range(i, n, i)):
+        if item not in seen:
+            seen.add(item)
+            yield(item)
 
