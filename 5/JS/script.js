@@ -1,0 +1,1 @@
+console.log(find_biggest_factor(10000));
