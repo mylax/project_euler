@@ -21,18 +21,48 @@ function find_primes(limit) {
 };
 
 
-function find_biggest_factor(n) {
-    var all_factors = [];
-    var factors = [];
-    var primes = find_primes(Math.ceil(Math.sqrt(n)));
-    for(let i = 1; i <= 20; i++){
-        for(k in primes) {
-            while(n % primes[k] === 0) {
-                factors.push(primes[k]);
-                n = n / primes[k];
-            }
+function table(arr) {
+    var a = [], b = [], prev;
 
+    arr.sort();
+    for ( var i = 0; i < arr.length; i++ ) {
+        if ( arr[i] !== prev ) {
+            a.push(arr[i]);
+            b.push(1);
+        } else {
+            b[b.length-1]++;
+        }
+        prev = arr[i];
+    }
+
+    return [a, b];
+}
+
+
+/* For each number in from, to find the prime factors and return an array that
+finds the maximum number of prime factors
+*/
+function find_biggest_factor(from, to) {
+    var all_factors = {};
+    var primes = find_primes(to);
+    for(let i = from; i <= to; i++){
+        var factors = [];
+        var filler = i;
+        for(let k = 0; primes[k] <= filler; k++) {
+            while(filler % primes[k] === 0 && i >= primes[k]) {
+                factors.push(primes[k]);
+                filler = filler / primes[k];
+            }
+        }
+        console.log(factors);
+        listed_prime_factors = table(factors);
+        for (g in listed_prime_factors[0]) {
+            prime = listed_prime_factors[0][g];
+            prime_count = listed_prime_factors[1][g];
+            if (all_factors[prime] === undefined || all_factors[prime] < prime_count ) {
+                all_factors[prime] = prime_count;
+            }
         }
     }
-    return factors;
+    return all_factors;
 }

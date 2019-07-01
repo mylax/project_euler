@@ -1,4 +1,8 @@
 def primes(limit):
+    '''
+    Find all primes up to the limit. Returns generator which iterates through
+    each prime once.
+    '''
     primes = [True] * (limit + 1)
     i = 2
     while i <= limit:
