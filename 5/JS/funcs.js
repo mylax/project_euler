@@ -54,7 +54,6 @@ function find_biggest_factor(from, to) {
                 filler = filler / primes[k];
             }
         }
-        console.log(factors);
         listed_prime_factors = table(factors);
         for (g in listed_prime_factors[0]) {
             prime = listed_prime_factors[0][g];
@@ -66,3 +65,22 @@ function find_biggest_factor(from, to) {
     }
     return all_factors;
 }
+
+
+/*2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?*/
+
+function getSmallestNumberDividable(upperEnd) {
+    var res = 1;
+    while (true) {
+      var checkDi = true;
+      for (var i = 1; i <= upperEnd; i++) {
+        if (res % i !== 0) {
+          checkDi = false;
+          break;
+        }
+      }
+      if (!!checkDi) return res;
+      res++;
+    }
+  }

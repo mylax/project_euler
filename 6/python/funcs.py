@@ -1,7 +1,1 @@
-a^2 + b^2
-
-(a + b)^2
-
-a^2 + 2ab + b^2
-
-2ab 
+print(sum(range(1, 101)) ** 2 - sum([i ** 2 for i in range(101)]))
