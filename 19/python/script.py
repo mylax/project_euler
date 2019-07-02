@@ -52,7 +52,8 @@ while(i < LIMIT):
         day += 1
     if weekday == 7:
         weekday = 1
-    else: weekday += 1
+    else:
+        weekday += 1
     RESULT.append([day, month, year, weekday])
     i += 1
 
