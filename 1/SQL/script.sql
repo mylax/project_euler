@@ -1,3 +1,2 @@
 SELECT
-  sum_multiples (ARRAY[3, 5],
-    1000);
+  sum_multiples (ARRAY[3, 5], 1000);
