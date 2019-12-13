@@ -2,8 +2,7 @@
 Solve Problems from https://projecteuler.net/  in python, R, javascript, sql (postgres) to gain better understanding of the languages. No libraries/packages allowed (except for unit testing libraries). Each function should be developed using test driven development.
 
 # Structure
-Each Problem has its own folder given by the ID of the problem. Each folder contains a funcs file, a testing file and a script file.
-
+Each Problem has its own folder given by the ID of the problem. Each Problem has a folder for every language the problem was solved in.
 
 # Python
 Using python 3 and unittest package.

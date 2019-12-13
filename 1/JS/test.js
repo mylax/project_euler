@@ -13,4 +13,3 @@ describe('#find_multiples()', function() {
         expect(funcs.find_multiples([3, 5], 10)).to.have.members([3, 5, 6, 9])
     });
 });
-
