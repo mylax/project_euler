@@ -1,18 +1,17 @@
 # Goal
-Solve Problems from https://projecteuler.net/  in python, R, javascript, sql (postgres) to gain better understanding of the languages. No libraries/packages allowed (except for unit testing libraries). Each function is developed using test driven development.
+Solve Problems from https://projecteuler.net/  in python, R, javascript, sql (postgres) to gain better understanding of the languages. No libraries/packages allowed (except for unit testing libraries). Each function should be developed using test driven development.
 
 # Structure
-Each Problem has its own folder given by the ID of the problem. Each folder contains a funcs file, a testing file and a script file.
-
+Each Problem has its own folder given by the ID of the problem. Each Problem has a folder for every language the problem was solved in.
 
 # Python
 Using python 3 and unittest package.
 
 # Javascript
-Using browser to run js. Thats why each problem includes a tests.html for running tests (using QUnit library) and Script.html to run the solution to the problem itself in the browser. Solution given as console.log().
+Using node.js for running the scripts and mocha, chai for testing.
 
 # SQL
-Using a postgres server to create databases and for running the scripts.
+Using postres.
 
 # R
 Using unittest library.
@@ -21,7 +20,7 @@ Using unittest library.
 Each funcs file contains all functions needed for the problem. This means functions can repeat in different problems. For clarity I allow that.
 
 # Testing file
-For each function I first think of tests to validate the output of the function. Only after I have defined tests, I start the coding. Each function has tests associated with it as I use Test Driven Development (unit tests).
+For each function I first think of tests to validate the output of the function. Only after I have defined tests, I start the coding. Each function has tests associated with it as I want to get into the habit of Test Driven Development.
 
 # Script file
-Each script file solves the given problem when executed and returns the answer as a printed value (console.log for javascript).
+Each script file solves the given problem when executed.
